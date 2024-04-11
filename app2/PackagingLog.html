@@ -1,0 +1,53 @@
+<html>  
+<head>
+    <style>     
+        html{     
+        background-color: white;     
+        padding: 5px;     
+        width: 95%;     
+        }     
+        pre {     
+        overflow-x: auto;     
+        white-space: pre-wrap;     
+        white-space: -moz-pre-wrap;     
+        white-space: -pre-wrap;     
+        white-space: -o-pre-wrap;     
+        word-wrap: break-word;     
+        }     
+    </style>     
+    
+    <script type="text/javascript">     
+            
+            function setup(htmlComponent) {     
+            
+				htmlComponent.addEventListener("DataChanged", function(event) {     
+				scrollID =  htmlComponent.Data;     
+					if (scrollID != ''){
+						if(scrollID==="bottom"){         
+							scrollToBottom();     
+						} else if(scrollID==="DOWNLOAD_MCRINSTALLER" || scrollID==="BUILD_MISSING" || scrollID==="SAMPLE_GEN" || scrollID==="USER_REQUESTED_PACKAGE"){     
+							document.getElementById(scrollID).scrollIntoView(true);     
+						} else {     
+							//document.body.innerHTML = document.body.innerHTML + scrollID;     
+							document.body.appendChild(scrollID);                 
+							scrollToBottom();     
+						}    
+						htmlComponent.Data = '';
+					}		
+				});          
+            }     
+            function scrollToBottom(){     
+            var scrollingElement = (document.scrollingElement || document.body);     
+            scrollingElement.scrollTop = scrollingElement.scrollHeight;     
+            }     
+            
+    </script> 
+</head>
+ <body><meta charset="UTF-8">        
+ <pre><font color=blue>mcc -W 'webapp:app2,CONFIG:C:\Users\Arijulhaque\AppData\Local\Temp\tpdc82bee3_86f0_4efe_b94e_9cfc5e43e88b.xml' -d C:\Users\Arijulhaque\Documents\MATLAB\Examples\R2022a\matlab\MortgageCalculatorExample\app2 -v -Z autodetect -C C:\Users\Arijulhaque\Documents\MATLAB\Examples\R2022a\matlab\MortgageCalculatorExample\app2.mlapp</font>
+Compiler version: 8.4 (R2022a)
+Analyzing file dependencies. 
+Parsing file "C:\Users\Arijulhaque\Documents\MATLAB\Examples\R2022a\matlab\MortgageCalculatorExample\app2.mlapp" 
+	(referenced from command line). 
+
+</pre></body></html>
